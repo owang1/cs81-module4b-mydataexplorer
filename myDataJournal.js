@@ -13,3 +13,17 @@ let weekData = [
 // The day with the most screentime should be Monday
 // The best focus day should be Wednesday
 // I predict caffeine will help focusLevel a little
+
+// Find the day with the highest screen time
+function findHighestScreenTime(){
+  let maxDay = null;
+  let maxScreenTime = 0;
+
+  for (let day of weekData) {
+    if(day.screenTime > maxScreenTime){
+      maxDay = day.day;
+      maxScreenTime = day.screenTime;
+    }
+  }
+  return maxDay;
+}
