@@ -1,4 +1,6 @@
-let weekData = [
+//Github link:
+// https://github.com/owang1/cs81-module4b-mydataexplorer
+//let weekData = [
   { day: "Monday", sleepHours: 9.5, screenTime: 6, mood: "normal", caffeineIntake: 1, focusLevel: 4},
   { day: "Tuesday", sleepHours: 8, screenTime: 4.5, mood: "high", caffeineIntake: 1, focusLevel: 4},
   { day: "Wednesday", sleepHours: 9, screenTime: 5, mood: "normal", caffeineIntake: 2, focusLevel: 7},
