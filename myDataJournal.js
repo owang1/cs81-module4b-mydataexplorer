@@ -66,3 +66,67 @@ function mostFrequentMood(){
   }
   return maxMood;
 }
+
+
+function getCaffeineArray(){
+  let caffeineArray = []
+  for (let day of weekData){
+    caffeineArray.push(day.caffeineIntake);
+  }
+  return caffeineArray;
+}
+
+function getFocusArray(){
+  let focusArray = []
+  for (let day of weekData){
+    focusArray.push(day.focusLevel);
+  }
+  return focusArray;
+}
+
+function getAverage(array){
+  let sum = 0;
+  const n = array.length;
+  for (let num of array){
+    sum += num;
+  }
+  const average = sum / n;
+  return average; 
+
+}
+
+function pearsonCorrelation() {
+    x = getCaffeineArray();
+    y = getFocusArray();
+    n = x.length;
+
+    const meanX = getAverage(x);
+    const meanY = getAverage(y);
+
+    let numerator = 0;
+    let sumSqX = 0;
+    let sumSqY = 0;
+
+    for (let i = 0; i < n; i++) {
+        const dx = x[i] - meanX;
+        const dy = y[i] - meanY;
+        numerator += dx * dy;
+        sumSqX += dx * dx;
+        sumSqY += dy * dy;
+    }
+
+    const denominator = Math.sqrt(sumSqX * sumSqY);
+
+    return numerator / denominator;
+}
+
+function isThereCorrelation(correlation){
+  if(correlation >= .7){
+    return "Yes, very much!";
+  }else if(correlation >= 0 && correlation < .7){
+    return "Yes, somewhat";
+  }
+  else{
+    return "Nope!";
+  }
+}
