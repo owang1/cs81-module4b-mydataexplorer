@@ -7,3 +7,9 @@ let weekData = [
   { day: "Saturday", sleepHours: 9, screenTime: 1.5, mood: "low", caffeineIntake: 1, focusLevel: 5},
   { day: "Sunday", sleepHours: 9, screenTime: 4, mood: "normal", caffeineIntake: 1, focusLevel: 2}
 ];
+
+
+// Predictions
+// The day with the most screentime should be Monday
+// The best focus day should be Wednesday
+// I predict caffeine will help focusLevel a little
