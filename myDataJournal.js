@@ -27,3 +27,19 @@ function findHighestScreenTime(){
   }
   return maxDay;
 }
+
+
+// Find the average hours of sleep per day
+function averageSleep(){
+  let totalSleep = 0;
+  let numberOfDays = 0;
+  for (let day of weekData){
+    totalSleep += day.sleepHours;
+    numberOfDays++;
+  }
+
+  let averageSleepHours = totalSleep / numberOfDays;
+  // Round to 2 decimal places
+  averageSleepHours = Math.round(averageSleepHours * 100) / 100;
+  return averageSleepHours;
+}
