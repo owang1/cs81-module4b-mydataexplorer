@@ -130,3 +130,16 @@ function isThereCorrelation(correlation){
     return "Nope!";
   }
 }
+
+
+console.log("Analyzing Olivia's Data Journal...\n");
+maxScreenDay = findHighestScreenTime();
+console.log("Most screen time:", maxScreenDay);
+averageSleepHours = averageSleep();
+console.log("Average sleep: ", averageSleepHours, "hrs");
+maxMood = mostFrequentMood();
+console.log("Most frequent mood:", maxMood);
+
+correlation = pearsonCorrelation();
+message = isThereCorrelation(correlation);
+console.log("Does more caffeine mean better focus? ->", message)
