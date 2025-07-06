@@ -43,3 +43,26 @@ function averageSleep(){
   averageSleepHours = Math.round(averageSleepHours * 100) / 100;
   return averageSleepHours;
 }
+
+
+function mostFrequentMood(){
+  const moodCounts = {};
+  // Iterate through entries of log
+  for (let day of weekData) {
+    if (!moodCounts[day.mood]) {
+      moodCounts[day.mood] = 1;
+    } else {
+      moodCounts[day.mood]++;
+    }
+  }
+
+  let maxMood = null;
+  let mostFrequentCount = 0;
+  for (let mood in moodCounts) {
+    if(moodCounts[mood] > mostFrequentCount) {
+      maxMood = mood;
+      mostFrequentCount = moodCounts[mood];
+    }
+  }
+  return maxMood;
+}
